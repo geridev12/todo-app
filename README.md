@@ -1,7 +1,7 @@
 # Todo App
 
 This is a simple **Todo App** built with Flutter, designed as an example for the article:  
-[**How to Prevent Unnecessary Rebuilds using Riverpod in Flutter**](https://medium.com/@geraldnuraj/how-to-prevent-unnecessary-rebuilds-using-riverpod-in-flutter-a8c7aabd25a0).  
+[**Avoid Unnecessary Widget Rebuilds when using Riverpod**](https://medium.com/@geraldnuraj/how-to-prevent-unnecessary-rebuilds-using-riverpod-in-flutter-a8c7aabd25a0).  
 
 ## About This Project  
 
