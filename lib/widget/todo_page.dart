@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_app/provider/todo_provider.dart';
+import '../provider/todo_provider.dart';
 
 class TodoPage extends ConsumerStatefulWidget {
   const TodoPage({super.key});
