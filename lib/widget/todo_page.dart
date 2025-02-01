@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../provider/todo_provider.dart';
+import 'package:todo_app/provider/todo_provider.dart';
 
 class TodoPage extends ConsumerStatefulWidget {
   const TodoPage({super.key});
@@ -55,7 +55,7 @@ class _TodoPageState extends ConsumerState<TodoPage> {
 
                     return ListView.separated(
                       itemCount: todos.length,
-                      separatorBuilder: (_, __) => const SizedBox(height: 15),
+                      separatorBuilder: (_, __) => child!,
                       itemBuilder: (context, index) {
                         final todo = todos[index];
 
@@ -82,6 +82,7 @@ class _TodoPageState extends ConsumerState<TodoPage> {
                       },
                     );
                   },
+                  child: const SizedBox(height: 15),
                 ),
               ),
             ],
