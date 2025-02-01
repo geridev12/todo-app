@@ -1,16 +1,13 @@
-# todo_app
+# Todo App
 
-A new Flutter project.
+This is a simple **Todo App** built with Flutter, designed as an example for the article:  
+[**How to Prevent Unnecessary Rebuilds using Riverpod in Flutter**](https://medium.com/@geraldnuraj/how-to-prevent-unnecessary-rebuilds-using-riverpod-in-flutter-a8c7aabd25a0).  
 
-## Getting Started
+## About This Project  
 
-This project is a starting point for a Flutter application.
+This project demonstrates useful practices for **optimizing widget rebuilds** using Riverpod. By applying proper state management techniques, we ensure efficient Widget rebuilds.  
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Key Topics Covered:  
+- Preventing **unnecessary widget rebuilds**  
+- Using **Riverpod providers efficiently**  
+- Improving **performance in Flutter apps** 
