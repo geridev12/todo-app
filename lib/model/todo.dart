@@ -7,10 +7,6 @@ class Todo {
     required this.isCompleted,
   });
 
-  final String id;
-  final String desc;
-  final bool isCompleted;
-
   const Todo.initial()
       : this(
           id: '',
@@ -23,6 +19,10 @@ class Todo {
         desc: desc,
         isCompleted: false,
       );
+
+  final String id;
+  final String desc;
+  final bool isCompleted;
 
   Todo copyWith({
     String? id,
