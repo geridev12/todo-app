@@ -34,3 +34,9 @@ class TodoNotifier extends StateNotifier<List<Todo>> {
 final todoProvider = StateNotifierProvider<TodoNotifier, List<Todo>>(
   (ref) => TodoNotifier(),
 );
+
+final todoItemProvider = Provider<Todo>(
+  (ref) {
+    throw UnimplementedError();
+  },
+);

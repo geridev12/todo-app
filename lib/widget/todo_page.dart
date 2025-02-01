@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_app/provider/todo_provider.dart';
+import '../provider/todo_provider.dart';
+import 'todo_item_list_tile.dart';
 
 class TodoPage extends ConsumerStatefulWidget {
   const TodoPage({super.key});
@@ -59,25 +60,14 @@ class _TodoPageState extends ConsumerState<TodoPage> {
                       itemBuilder: (context, index) {
                         final todo = todos[index];
 
-                        final id = todo.id;
-                        final desc = todo.desc;
-
-                        return ListTile(
-                          key: ValueKey<String>(id),
-                          leading: Text(
-                            desc,
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                          trailing: IconButton(
-                            onPressed: () =>
-                                ref.read(todoProvider.notifier).deleteTodo(
-                                      id: id,
-                                    ),
-                            icon: const Icon(
-                              Icons.delete,
-                              color: Colors.red,
+                        return ProviderScope(
+                          key: ValueKey<String>(todo.id),
+                          overrides: [
+                            todoItemProvider.overrideWithValue(
+                              todo,
                             ),
-                          ),
+                          ],
+                          child: const TodoItemListTile(),
                         );
                       },
                     );
