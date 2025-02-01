@@ -26,8 +26,6 @@ class _TodoPageState extends ConsumerState<TodoPage> {
 
   @override
   Widget build(BuildContext context) {
-    final todos = ref.watch(todoProvider);
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -51,31 +49,37 @@ class _TodoPageState extends ConsumerState<TodoPage> {
                 },
               ),
               Flexible(
-                child: ListView.separated(
-                  itemCount: todos.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 15),
-                  itemBuilder: (context, index) {
-                    final todo = todos[index];
-                
-                    final id = todo.id;
-                    final desc = todo.desc;
-                
-                    return ListTile(
-                      key: ValueKey<String>(id),
-                      leading: Text(
-                        desc,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      trailing: IconButton(
-                        onPressed: () =>
-                            ref.read(todoProvider.notifier).deleteTodo(
-                                  id: id,
-                                ),
-                        icon: const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        ),
-                      ),
+                child: Consumer(
+                  builder: (context, ref, child) {
+                    final todos = ref.watch(todoProvider);
+
+                    return ListView.separated(
+                      itemCount: todos.length,
+                      separatorBuilder: (_, __) => const SizedBox(height: 15),
+                      itemBuilder: (context, index) {
+                        final todo = todos[index];
+
+                        final id = todo.id;
+                        final desc = todo.desc;
+
+                        return ListTile(
+                          key: ValueKey<String>(id),
+                          leading: Text(
+                            desc,
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                          trailing: IconButton(
+                            onPressed: () =>
+                                ref.read(todoProvider.notifier).deleteTodo(
+                                      id: id,
+                                    ),
+                            icon: const Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                            ),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),
